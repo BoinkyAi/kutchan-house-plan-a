@@ -67,7 +67,7 @@ const _qLang = new URLSearchParams(location.search).get('lang');
 let LANG = (_qLang === 'en' || _qLang === 'ja') ? _qLang : (localStorage.getItem('h3dLang') === 'en' ? 'en' : 'ja');
 const TXT = {
   ja: {
-    title: 'プランA（3階建て）', h1: 'プランA', h2: 'プランB', h3: '土屋 参考プラン',
+    title: '倶知安 住宅計画 — トビアスの自作プラン', h1: 'プランA', h2: 'プランB', h3: '土屋 参考プラン',
     h1t: 'プランA：3階建て・陸屋根', h2t: 'プランB：2階建て・片流れ屋根', h3t: '土屋建設の参考住宅プラン', h4: '土屋 改案', h4t: '土屋参考プランの改案：1階ジム＋温泉、2階LDK・専用シャワー室付き寝室・書斎、ロフトに専用シャワー室付き寝室・書斎', hsegt: 'プランA・B（倶知安の計画）と土屋建設の参考プラン・改案、プランB 縮小版',
     h5: 'プランB 縮小版', h5t: 'プランB 縮小版：プランBをコンパクトにしてコストを抑えた案（13.65×9.1mの総2階・長辺が眺望側、1階ジム＋温泉、2階LDK・専用シャワー室付き寝室2・書斎2）',
     origt5: 'プランB 縮小版の最初の間取りを表示（編集はそのまま残ります）',
@@ -88,7 +88,7 @@ const TXT = {
     fov: '画角', fovt: '画面の長辺方向の角度', speed: '速度', wide: '広角', narrow: '望遠', widet: '広角（90°）', narrowt: '望遠（50°）',
     hudOrbit: '周回', hudFly: '飛行', hudWalk: '歩行',
     loading: '建物を作成中…', loadingTex: (n, t) => 'テクスチャ・モデルを読み込み中… ' + n + ' / ' + t, failed: '読み込みに失敗しました：',
-    doc1: 'Plan A (3-storey) / プランA（3階建て）', doc2: '倶知安 住宅計画 プランB — 3Dウォークスルー', doc3: '土屋建設 参考プラン — 3Dウォークスルー', doc4: '土屋建設 参考プラン 改案 — 3Dウォークスルー', doc5: '倶知安 住宅計画 プランB 縮小版 — 3D', doc6: '倶知安 住宅計画 プランC — 3D',
+    doc1: '倶知安 住宅計画 — トビアスの自作プラン — プランA', doc2: '倶知安 住宅計画 プランB — 3Dウォークスルー', doc3: '土屋建設 参考プラン — 3Dウォークスルー', doc4: '土屋建設 参考プラン 改案 — 3Dウォークスルー', doc5: '倶知安 住宅計画 プランB 縮小版 — 3D', doc6: '倶知安 住宅計画 プランC — 3D',
     geo6: 'プランC：プランB 縮小版のL字型案です。12.74×8.19mの母屋の東端から、眺望側（北）へ5.46×4.55mの翼棟が突き出し、全体を片流れ屋根1枚（北側が高い）で覆います。1階（天井高2.8m）：翼棟にジム（3面ガラス）、温泉ゾーンに浴室（ひのき浴槽2つ）・浴室から入るサウナ・脱衣室・その奥のラウンジ、南側に玄関・スキー/ギア室・トイレ・洗濯室・収納・機械室。2階：翼棟にリビング（3面とも床から天井までのガラス・薪ストーブ）、その奥にダイニング・キッチン、主寝室（クローゼット・専用シャワー室付き）とオープンな書斎、南側に寝室2（専用シャワー室付き）・書斎2・洗濯・収納。3Dは確認用の簡易表示です。「間取りを編集」で壁を動かせます。',
     geo5: 'プランB 縮小版：プランB（2階建て・片流れ屋根）をコンパクトにしてコストを抑えた案です。13.65×9.1mの長方形の総2階（910mmモジュールで15×10、長辺が眺望側）、片流れ屋根1枚（眺望側の北側が高い）、外部階段・2階の外部出入口・吹抜けなし、直階段1本。1階（天井高2.8m）：北側の大開口（大きなFIX窓3枚）に沿ってジム（ストレッチコーナー付き、ホールとつながる）、ひのき浴槽2つの浴室（浴槽の上に大きな窓）と浴室から入るサウナ、脱衣室（ジムから引き戸）とその奥のラウンジ。南側に玄関・スキー/ギア室・トイレ・洗濯/機械室。2階：北側にリビング・ダイニング（床から天井までのガラス）と主寝室（ウォークインクローゼット・専用シャワー室付き）、中央にキッチンとオープンな書斎、南側に寝室2（専用シャワー室付き）・書斎2・洗濯・トイレ。ユニットバスは使いません。3Dは確認用の簡易表示です。「間取りを編集」で壁を動かせます。',
     geo4: '土屋建設の参考プランの改案：母屋を東側（旧風除室・物置の位置）まで延ばし、3層とも10.9×7.3m、片流れ屋根（4/10勾配・眺望側の北側が高い）は同じです。1階（天井高2.8m）：北側に大きな窓2つのジム（ホールに開放）、ひのき浴槽2つとウォークインシャワーの浴室、浴室から入るサウナ、ホールと浴室の間の脱衣・休憩室、トイレ、洗濯・機械室、カーポート側の玄関。2階：北側にLDK（リビングは吹抜け・床から天井までのガラス・薪ストーブ）、寝室1室（ウォークインクローゼット・専用シャワー室付き）、階段の吹抜けに面したオープンな書斎。ロフト：天井高を取れる北側に専用シャワー室付きの寝室と書斎。ユニットバスは使わず、シャワーユニットのみ。仕上げはイメージで、仕様を示すものではありません。「間取りを編集」で壁を動かせます。',
@@ -101,12 +101,12 @@ const TXT = {
       + '<b>ショートカット</b> — <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 各階へ ・ <kbd>0</kbd> 外観 ・ <kbd>F</kbd> 歩行／飛行 ・ <kbd>O</kbd> 周回 ・ <kbd>C</kbd> 屋根 ・ <kbd>T</kbd> 部屋名 ・ <kbd>G</kbd> 画質<br><br>'
       + '<b>歩行</b>モードでは今いる階の床の上を目の高さで移動し、壁で止まります。<b>飛行</b>モードではどこへでも自由に移動できます。<br>'
       + 'プルダウンから各部屋へ移動できます。<b>屋根</b>オフ＋<b>フロア</b>（切断表示）＋<b>飛行</b>で、模型のように見ることができます。<br><br>',
-    geo1: '形状は実際の計画図（Floor Plan Creatorのデータ）どおりです：3階建て、天井高2.74m、外壁厚37cm、吹抜けのトレーニングルーム・浴室・玄関・リビング、窓と階段は図面どおり。仕上げはイメージで、仕様を示すものではありません。テクスチャ・空・家具モデル：Poly Haven（CC0）。',
+    geo1: 'プランA\n1階：玄関、ガレージ・スキー室、トレーニングルーム（吹抜け）、浴室（浴槽）、サウナ、休憩・脱衣室、洗面室、機械室・洗濯室。\n2階：リビング（吹抜け）、ダイニング、キッチン、パウダールーム。\n3階：寝室4室、バスルーム2室。',
     geo2: 'プランBも実際の計画図（同じFloor Plan Creatorの左側の建物）どおりです：2階建て、1階天井高3.5m、外壁厚37cm、窓・扉・階段は図面どおり。2階は片流れの屋根で、リビング側が高く寝室側に向かって低くなります（屋根のスライダーで高さを変更できます）。部屋名は設備の配置から推定しています。仕上げはイメージです。テクスチャ・空・家具モデル：Poly Haven（CC0）。',
     close: '閉じる',
   },
   en: {
-    title: 'Plan A (3-storey)', h1: 'Plan A', h2: 'Plan B', h3: 'Tsuchiya ref.',
+    title: "Kutchan house — Toby's own plans", h1: 'Plan A', h2: 'Plan B', h3: 'Tsuchiya ref.',
     h1t: 'Plan A: 3 floors, flat roof', h2t: 'Plan B: 2 floors, sloped (shed) roof', h3t: "Tsuchiya Kensetsu's reference house plan", h4: 'Tsuchiya rev.', h4t: 'Revision of the Tsuchiya plan: gym + onsen 1F; LDK, an ensuite bedroom + a den 2F; an ensuite bedroom + a den in the loft', hsegt: 'Plans A + B (the Kutchan house), the Tsuchiya Kensetsu reference house and its revision, Plan B compact',
     h5: 'Plan B compact', h5t: 'Plan B compact: the compact, cheaper version of Plan B (13.65 x 9.1 m box on 2 floors, long side on the view: gym + onsen 1F; LDK, 2 ensuite bedrooms + 2 dens 2F)',
     origt5: 'Show Plan B compact as first drawn (your edits stay saved)',
@@ -127,7 +127,7 @@ const TXT = {
     fov: 'FIELD OF VIEW', fovt: "Measured across the screen's long side", speed: 'SPEED', wide: 'Wide', narrow: 'Narrow', widet: 'Wide angle (90°)', narrowt: 'Narrow / zoom (50°)',
     hudOrbit: 'orbit', hudFly: 'fly', hudWalk: 'walk',
     loading: 'building the house…', loadingTex: (n, t) => 'loading textures + models… ' + n + ' / ' + t, failed: 'failed to load: ',
-    doc1: 'Plan A (3-storey) / プランA（3階建て）', doc2: 'Kutchan house — Plan B — 3D walkthrough', doc3: 'Tsuchiya Kensetsu reference house — 3D walkthrough', doc4: 'Tsuchiya Kensetsu reference house, revised — 3D walkthrough', doc5: 'Kutchan house — Plan B compact — 3D', doc6: 'Kutchan house — Plan C — 3D',
+    doc1: "Kutchan house — Toby's own plans — Plan A", doc2: 'Kutchan house — Plan B — 3D walkthrough', doc3: 'Tsuchiya Kensetsu reference house — 3D walkthrough', doc4: 'Tsuchiya Kensetsu reference house, revised — 3D walkthrough', doc5: 'Kutchan house — Plan B compact — 3D', doc6: 'Kutchan house — Plan C — 3D',
     geo6: "Plan C: the L-shaped version of Plan B compact. A 12.74 x 8.19 m bar with a 5.46 x 4.55 m wing projecting from its east end toward the view (north), all under one mono-pitch roof plane, high on the north. 1F (2.8 m ceilings): the gym in the wing, glass on its three outside faces; the onsen zone: bath (two hinoki tubs) with the sauna opening into it, the changing room and a lounge off it; entrance, ski / gear room, WC, laundry, storage and plant room along the south. 2F: the living in the wing, floor-to-ceiling glass on all three faces, with the wood stove; dining + kitchen behind it, the master bedroom (closet + ensuite) and an open den; bedroom 2 (ensuite), a second den, laundry and storage along the south. The 3D is a quick check, not a finished walkthrough. 'Edit plan' lets you move the walls.",
     geo5: "Plan B compact: the compact, cheaper version of Plan B (2 floors under one sloped roof). One simple 13.65 x 9.1 m rectangle on both floors (15 x 10 modules of 910 mm), its long side along the view, under one mono-pitch roof, high on the north (the view side); no outside stair, no 2F outside door, no void, one straight stair. 1F (2.8 m ceilings): the gym along the north glass (three big fixed panes) with a stretching alcove, open to the hall; the bath (two hinoki tubs under a big pane) with the sauna opening into it, the changing room (a sliding door from the gym) and a lounge off it; entrance, ski / gear room, WC, laundry + plant room along the south. 2F: living + dining behind floor-to-ceiling glass and the master bedroom (walk-in closet + ensuite) on the north side, kitchen and an open den in the middle, bedroom 2 (ensuite), a second den, laundry and WC along the south. No unit baths. The 3D is a quick check, not a finished walkthrough. 'Edit plan' lets you move the walls.",
     geo4: "A revision of Tsuchiya Kensetsu's reference house: the main block runs east over the old porch and storage, so all three levels are 10.9 x 7.3 m, under the same sloped roof (4/10 pitch, high on the north, the view side). 1F (2.8 m ceilings): gym with two big north windows, open to the hall; a bath with two hinoki tubs and a walk-in shower, the sauna (it opens into the bath), a changing + rest room between the hall and the bath, WC, laundry + plant room and the entrance facing the carport. 2F: living, dining and kitchen along the north side (the living double height behind floor-to-ceiling glass, with the wood stove), one bedroom with a walk-in closet and an ensuite shower room, and an open den / office by the stair void. Loft, in the north strip where the roof is high enough: a bedroom with its own ensuite shower room, and a den / office. No unit baths, shower units only. Finishes are indicative only. 'Edit plan' lets you move the walls.",
@@ -140,7 +140,7 @@ const TXT = {
       + '<b>Shortcuts</b> — <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> jump to a floor · <kbd>0</kbd> outside · <kbd>F</kbd> walk / fly · <kbd>O</kbd> orbit · <kbd>C</kbd> roof · <kbd>T</kbd> labels · <kbd>G</kbd> quality<br><br>'
       + '<b>Walk</b> keeps you at eye height on the floor you are on and stops you at walls. <b>Fly</b> goes anywhere, through everything.<br>'
       + 'The dropdown jumps to any room. <b>Roof</b> off + <b>Floors</b> (cut-away) + <b>Fly</b> = doll-house view.<br><br>',
-    geo1: 'Geometry is the real plan (Floor Plan Creator export): 3 floors, 2.74 m ceilings, 37 cm exterior walls, double-height gym, bath, entrance and living, every window and stair as drawn. Finishes are indicative, not specified. Textures, sky and furniture models: Poly Haven (CC0).',
+    geo1: 'Plan A\n1F: entrance, garage / ski room, gym (double height), bath with soaking tubs, sauna, rest / changing room, wash room, plant room + laundry.\n2F: living (double height), dining, kitchen, powder room.\n3F: 4 bedrooms, 2 bathrooms.',
     geo2: 'Plan B is the real plan too (the left-hand house of the same Floor Plan Creator share): 2 floors, 1F ceilings 3.5 m, 37 cm exterior walls, every window, door and the stair as drawn. The 2F sits under one sloped (mono-pitch) roof, high over the living room and falling towards the bedrooms; set the two heights with the Roof sliders. Room names are inferred from the fixtures (the plan has none). Finishes are indicative. Textures, sky and furniture models: Poly Haven (CC0).',
     close: 'Close',
   },
@@ -3197,6 +3197,7 @@ function applyLang() {
   document.documentElement.lang = LANG;
   document.querySelectorAll('[data-i18n]').forEach(e => { const v = T(e.dataset.i18n); if (typeof v === 'string') e.textContent = v; });
   document.querySelectorAll('[data-i18n-title]').forEach(e => { const v = T(e.dataset.i18nTitle); if (typeof v === 'string') e.title = v; });
+  document.querySelectorAll('[data-en]').forEach(e => { e.textContent = (LANG === 'ja' && e.dataset.ja) || e.dataset.en; });
   const hb = $('helpBody'); if (hb) hb.innerHTML = T('help');
   const geo = $('helpGeo'); if (geo) geo.textContent = T(HOUSE === 6 ? 'geo6' : HOUSE === 5 ? 'geo5' : HOUSE === 4 ? 'geo4' : H3 ? 'geo3' : HOUSE === 2 ? 'geo2' : 'geo1');
   document.title = T(HOUSE === 6 ? 'doc6' : HOUSE === 5 ? 'doc5' : HOUSE === 4 ? 'doc4' : H3 ? 'doc3' : HOUSE === 2 ? 'doc2' : 'doc1');
@@ -3313,7 +3314,7 @@ const mark = (k, t0) => { MARKS[k] = Math.round(performance.now() - t0); return 
 const texturesReady = new Promise((res) => { LM.onLoad = res; });
 applyLang();   /* static UI text + titles before the house loads */
 loadMsg(T('loading'));
-const planReady = fetch('plan.json').then(r => r.json());
+const planReady = window.H3D_LEAVING ? new Promise(() => {}) : fetch('plan.json').then(r => r.json());   /* ?house=2: leaving for plan-b/ */
 planReady.then(async (plan) => {
   let t = performance.now();
   buildMaterials(); t = mark('materials', t);

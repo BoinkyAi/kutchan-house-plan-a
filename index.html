@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Plan A (3-storey) / プランA（3階建て）</title>
+<title>倶知安 住宅計画 — トビアスの自作プラン</title>
+<script>/* ?house=2 = Plan B, in plan-b/ */
+(function () { if (new URLSearchParams(location.search).get('house') !== '2') return;
+  window.H3D_LEAVING = true; location.replace('plan-b/' + location.search + location.hash); })();</script>
 <style>
   :root{ --ui:#11161c; --ui2:#1b2430; --fg:#e8eef5; --ac:#5ac8fa; --bd:#2c3a4a; }
   *{box-sizing:border-box}
@@ -42,6 +45,10 @@
   #load{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0b0f14;z-index:30;flex-direction:column;gap:10px}
   .sp{width:26px;height:26px;border:3px solid #223;border-top-color:var(--ac);border-radius:50%;animation:s 1s linear infinite}
   @keyframes s{to{transform:rotate(360deg)}}
+  #top .apps{flex-basis:100%;font-size:11px;opacity:.8}
+  #top .apps a{color:var(--ac);text-decoration:none}
+  #top .apps a:hover{text-decoration:underline}
+  #top .apps b{font-weight:600}
   .seg{display:inline-flex}
   .seg button{border-radius:0;margin-left:-1px}
   .seg button:first-child{border-radius:8px 0 0 8px;margin-left:0}
@@ -62,7 +69,8 @@
 <canvas id="c"></canvas>
 
 <div id="top" class="panel">
-  <span class="t" data-i18n="title">プランA（3階建て）</span>
+  <span class="t" data-en="Kutchan house — Toby's own plans" data-ja="倶知安 住宅計画 — トビアスの自作プラン">倶知安 住宅計画 — トビアスの自作プラン</span>
+  <span class="seg"><button id="bH1" class="on" data-en="Plan A" data-ja="プランA">プランA</button><button id="bH2" data-en="Plan B" data-ja="プランB" onclick="location.href='plan-b/'">プランB</button></span>
   <span class="sub" id="areaInfo"></span>
   <select id="jump" data-i18n-title="jumpt"></select>
   <button id="bWalk" data-i18n-title="walkt">歩行</button>
@@ -73,6 +81,7 @@
   <button id="bQual" data-i18n-title="qualt">画質：高</button>
   <button id="bLang" data-i18n="lang" data-i18n-title="langt">English</button>
   <button id="bHelp">?</button>
+  <div class="apps"><a href="https://boinkyai.github.io/kutchan-house-3d/" data-en="Builder plans" data-ja="建築会社向けプラン">建築会社向けプラン</a> · <a href="https://boinkyai.github.io/kutchan-house-ichijo/" data-en="Ichijo versions" data-ja="一条工務店版">一条工務店版</a> · <b data-en="Toby's own plans" data-ja="トビアスの自作プラン">トビアスの自作プラン</b></div>
 </div>
 
 <div id="hud"></div>
@@ -101,7 +110,7 @@
 
 <div id="help"><div class="box">
 <div id="helpBody"></div>
-<span id="helpGeo" style="opacity:.6"></span>
+<span id="helpGeo" style="opacity:.6;white-space:pre-line"></span>
 <div style="margin-top:14px"><button data-i18n="close" onclick="document.getElementById('help').classList.remove('show')">閉じる</button></div>
 </div></div>
 
@@ -110,6 +119,6 @@
 <script type="importmap">
 {"imports":{"three":"./three.module.min.js","three/addons/":"./jsm/"}}
 </script>
-<script type="module" src="app.js?v=1"></script>
+<script type="module" src="app.js?v=2"></script>
 </body>
 </html>
